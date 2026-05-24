@@ -1,0 +1,190 @@
+/*Configurações Gerais*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Configurações do Contéudo da página*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+}
+
+.conteudo, .conteudo-visual {
+    background-color: #fff;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 30px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.09);
+}
+
+h1, h2 {
+    color: #1c5ec2;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campo-grupo label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 18px;
+    color: #4883db;
+}
+
+.campo-grupo input {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    outline: none; /*Para remover a bordar padrão ao clicar*/
+}
+
+.campo-grupo input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/*Ajuste de campos na NTe*/
+.campo-grupo:has(#nota-fiscal) {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.campo-grupo:has(#nota-fiscal) input {
+    flex: 1;
+}
+
+/*Botões*/
+.campo-confirmar {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.campo-confirmar button {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#btn-adicionar {
+    background-color: #1c5ec2;
+    color: #fff;
+    flex: 2;
+}
+
+#btn-adicionar:hover {
+    background-color: #14438b;
+}
+
+.btn-exp-excel {
+    background-color: #3aad6a;
+    color: #fff;
+    flex: 1;
+}
+
+.btn-exp-excel:hover {
+    background-color: #1b8146;
+}
+
+.btn-limpar-tudo {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-config {
+    background-color: #e0e0e0;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-config:hover {
+    
+}
+
+/*Tabela dos dados*/
+#tabela-itens {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+#tabela-itens th, #tabela-itens td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#tabela-itens th {
+    background-color: #eaecee;
+    color: #3d4f69c4;
+}
+
+.registro-tempo {
+    color: #e67e22;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.tabela-vazia {
+    text-align: center !important;
+    color: #999;
+    font-style: italic;
+    padding: 30px !important;
+}
+
+/*Controle da Tabela*/
+.tabela-controles, .paginacao-controle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.buscar-input {
+    font-weight: 600;
+    color: #4883db;
+}
+
+#busca-input, #itens-por-pagina {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+#busca-input {
+    width: 450px;
+}
+
+.paginacao-controle {
+    padding: 10px 20px;
+    align-items: center;
+}
+
+#btn-anterior, #btn-proximo {
+    padding: 8px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}

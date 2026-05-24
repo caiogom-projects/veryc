@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Título da Página-->
+    <title>Sistema de Entrada - Código de Barras</title>
+    <!-- Estilos CSS-->
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+
+    <!--Mostrar os dados visuais e registrado-->
+    <div class="conteudo-visual">
+        <!--Título da Tabela-->
+        <h1>Registro de Entradas</h1>
+        <!--Controles da Tabela-->
+        <div class="tabela-controles">
+            <div class="">
+                <input type="text" id="busca-input" placeholder="Pesquise pelo Código de barras, NFe ou Obs. ">
+            </div>
+
+            <div class="">
+                <label for="itens-por-pagina" class="buscar-input">Exibir </label>
+                <select id="itens-por-pagina">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+        <!--Tabela de Dados-->
+        <table id="tabela-itens">
+            <thead>
+                <tr> <!--Títulos-->
+                    <th class="registro-tempo">Data</th>
+                    <th class="registro-tempo">Hora</th>
+                    <th>Código de Barras</th>
+                    <th>Quantidade</th>
+                    <th>NFe - Série</th>
+                    <th>Observações</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody id="lista-das-entradas">
+                <tr>
+                    <td colspan="7" class="tabela-vazia">Nenhuma entrada de item ainda.</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--Navegação entre as tabelas-->
+        <div class="paginacao-controle">
+            <button id="btn-anterior">Anterior</button>
+            <span id="indicador-pagina">Página 1 de 1</span>
+            <button id="btn-proximo">Próximo</button>
+        </div>
+    </div>
+
+    <div class="conteudo">
+        <h2> Entrada de Itens no Estoque ou Devoluções </h2>
+        <!--Formulário da entrada dos dados-->
+        <form id="registro-formulario" class="formulario">
+            <!--Campo do Código de Barras-->
+            <div class="campo-grupo">
+                <label for="codigo-barras">Código de Barras: </label>
+                <!--Campo do Código de barras - Autofocus para começar aqui-->
+                <input type="text" id="codigo-barras" required autofocus placeholder="Aguardando Código de Barras...">
+            </div>
+
+            <!--Campo da Quantidade-->
+            <div class="campo-grupo">
+                <label for="quantidade">Quantidade: </label>
+                <input type="number" id="quantidade" required min="1" value="1" placeholder="Digite a quantidade...">
+            </div>
+
+            <!--Campo NFa-->
+            <div class="campo-grupo">
+                <label for="nota-fiscal">NFe: </label>
+                <input type="number" id="nota-fiscal" placeholder="Número da NFe">
+                <label for="serie-NFe">Série: </label>
+                <input type="text" id="serie-nfe" placeholder="Série da NFe">
+            </div>
+
+            <!--Campo de Obs.-->
+            <div class="campo-grupo">
+                <label for="observacao">Observação: </label>
+                <input type="text" id="observacao" placeholder="Algo diferente nessa entrada?">
+            </div>
+
+            <!--Botões-->
+            <div class="campo-confirmar">
+                <button type="submit" id="btn-adicionar">Adicionar Informações</button>
+                <button type="button" id="btn-exportar" class="btn-exp-excel">Exportar para Excel</button>
+                <button type="button" id="btn-limpar-tudo" class="btn-limpar-tudo">Limpar Tudo</button>
+            </div>
+        </form>
+    </div>
+    
+    <!--Importando JS-->
+    <script src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <!--Fim-->
+
+</body>
+</html>
